@@ -49,7 +49,7 @@ function createLog(cb) {
 }
 
 function getDirectory(cb) {
-  inquirer.prompt([{ name: 'directory', message: 'Enter the directory to search' }]).then(function (response) {
+  inquirer.prompt([{ name: 'directory', message: 'Enter the directory to search\n' }]).then(function (response) {
     const directory = path.resolve(response.directory).trim();
     try {
       if (fs.lstatSync(directory).isDirectory()) {
@@ -66,7 +66,7 @@ function getDirectory(cb) {
 }
 
 function getSearchString(directory, cb) {
-  inquirer.prompt([{ name: 'search_string', message: `Enter the text to search in ${directory}` }]).then(function (response) {
+  inquirer.prompt([{ name: 'search_string', message: `Enter the text to search\n` }]).then(function (response) {
     cb(response.search_string);
   });
 }
