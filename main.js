@@ -73,7 +73,7 @@ function getSearchString(directory, cb) {
 
 function findFiles(directory, search_string, cb) {
   const spinner_1 = new Spinner({
-    text: `%s Finding files in ${directory}`,
+    text: '%s Finding files',
     onTick: function (msg) {
       this.clearLine(this.stream);
       this.stream.write(msg);
